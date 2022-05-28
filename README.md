@@ -1,5 +1,5 @@
 # Attribute Knowledge Graph Completion via Augmented Rule-based Learning Method
-The augmented rule-based learning system is built on [AnyBURL]([https://pages.github.com/](https://web.informatik.uni-mannheim.de/AnyBURL/)) and is also called ***Augmented AnyBURL***. To run Augmented AnyBURL, there are four steps to go.
+The augmented rule-based learning system is built on [AnyBURL](https://web.informatik.uni-mannheim.de/AnyBURL/) and is also called ***Augmented AnyBURL***. To run Augmented AnyBURL, there are four steps to go.
 ## Step 1: Learning
 ### Command:
 java -Xmx3G -cp AnyBURL-JUNO.jar de.unima.ki.anyburl.LearnReinforced config-learn.properties
