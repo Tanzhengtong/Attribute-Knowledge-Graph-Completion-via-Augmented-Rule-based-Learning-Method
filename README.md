@@ -1,8 +1,17 @@
 # Attribute Knowledge Graph Completion via Augmented Rule-based Learning Method
 The augmented rule-based learning system is built on [AnyBURL](https://web.informatik.uni-mannheim.de/AnyBURL/) and is also called ***Augmented AnyBURL***. The complete source code of Augmented Rule-based Learning System is stored in [Google Drive](https://drive.google.com/drive/folders/1Dypoy9xSNmGs7LjEm0sT1JPZ_9KGXTZo?usp=sharing). To run ***Augmented AnyBURL***, there are five steps to go.
 ### Step 1: Locate the working directory
-Before you start to run the Augemented AnyBURL, you need to go to the working directory first since all the modules are here. The working directory is '/AnyBURL/de/unima/ki/anyburl'.
-
+Before you start to run the Augemented AnyBURL, you need to go to the working directory first since all the modules are here. The working directory is '/AnyBURL/de/unima/ki/anyburl'. There are some explaination of the files in the working directory:\
+\
+***rules***: This folder contains the rules learned from AnyBURL and the augmented rules from Augmented module. In additionally, this folder also store the previous results on different data sets. If you want to test the step 4 and step5 directly, you can copy the **rule files** (e.g. 'alpha-10', 'alpha-100', etc) and **augmented rule file** (i.e., 'augmented_rule') to the folder **rules**.\
+***data 3***: This folfer contains the data setes used in Augmented AnyBURL.\
+***predictions***: This folder contains the results of link prediciton tasks from Step 4.\
+***Previous Version of Augmentation Module***: This folder contains the previous versions of augmented modules.\
+***Augmentation_module_V8.py*** : The latest version of Augmentation module.\
+***AnyBURL.jar***: AnyBURL is packaged as jar file and requires no external resources. More information about [AnyBURL](https://web.informatik.uni-mannheim.de/AnyBURL/).\
+***config-learn.properties***: The configuration file for rule learning task (Step 2).\
+***config-apply.properties***: The configuration file for link prediction tasks (Step 4).\
+***config-eval.properties***: The configuration file for Link prediction evaluation (Step 5).
 ## Step 2: Learning
 ### Command:
 java -Xmx3G -cp AnyBURL-JUNO.jar de.unima.ki.anyburl.LearnReinforced config-learn.properties
