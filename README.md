@@ -1,7 +1,7 @@
 # Attribute Knowledge Graph Completion via Augmented Rule-based Learning Method
 The augmented rule-based learning system is built on [AnyBURL](https://web.informatik.uni-mannheim.de/AnyBURL/) and is also called ***Augmented AnyBURL***. The complete source code of the Augmented Rule-based Learning System is stored in [Google Drive](https://drive.google.com/drive/folders/1Dypoy9xSNmGs7LjEm0sT1JPZ_9KGXTZo?usp=sharing). To run ***Augmented AnyBURL***, there are five steps to go.
 ### Step 1: Locate the working directory
-Before you start to run the Augmented AnyBURL, you need to go to the working directory first since all the modules are here. The working directory is '/AnyBURL/de/unima/ki/anyburl'. There are some explanations of the files in the working directory:\
+Before you start to run the Augmented AnyBURL, it is important for you to go to the working directory first since all the modules are here. The working directory is '/AnyBURL/de/unima/ki/anyburl'. There are some explanations of the files in the working directory:\
 \
 ***rules***: This folder contains the rules learned from AnyBURL and the augmented rules from Augmented module. In additionally, this folder also store the previous results on different data sets. If you want to test the step 4 and step5 directly, you can copy the **rule files** (e.g. 'alpha-10', 'alpha-100', etc) and ***augmented rule file*** (i.e., 'augmented_rule') to the folder ***rules***.\
 ***data 3***: This folfer contains the data setes used in Augmented AnyBURL.\
