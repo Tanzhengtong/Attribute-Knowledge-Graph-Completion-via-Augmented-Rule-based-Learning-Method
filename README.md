@@ -1,7 +1,7 @@
 # Attribute Knowledge Graph Completion via Augmented Rule-based Learning Method
 The augmented rule-based learning system is built on [AnyBURL](https://web.informatik.uni-mannheim.de/AnyBURL/) and is also called ***Augmented AnyBURL***. The complete source code of the Augmented Rule-based Learning System is stored in [Google Drive](https://drive.google.com/drive/folders/1Dypoy9xSNmGs7LjEm0sT1JPZ_9KGXTZo?usp=sharing). To run ***Augmented AnyBURL***, there are five steps to go.
 ### Step 1: Locate the working directory
-Before you start to run the Augmented AnyBURL, it is important for you to go to the working directory first since all the modules are here. The working directory is '/AnyBURL/de/unima/ki/anyburl'. There are some explanations of the files in the working directory:\
+Before you start to run the Augmented AnyBURL, it is important for you to go to the working directory first since all the modules are here. The working directory is ***'/AnyBURL/de/unima/ki/anyburl'***. There are some explanations of the files in the working directory:\
 \
 ***rules***: This folder contains the rules learned from AnyBURL and the augmented rules from Augmented module. In additionally, this folder also store the previous results on different data sets. If you want to test the step 4 and step5 directly, you can copy the **rule files** (e.g. 'alpha-10', 'alpha-100', etc) and ***augmented rule file*** (i.e., 'augmented_rule') to the folder ***rules***.\
 ***data 3***: This folfer contains the data setes used in Augmented AnyBURL.\
@@ -30,7 +30,7 @@ The data set in folder ***data 3*** (e.g. 'family', 'FB15-237', etc) and the rul
 ### Command: 
 Python Augmentation_module_V8.py Family 0 0.8 0.05 4 50 1
 ### Comment: 
-To run the augmentation module, you need to specify some Hyper-parameters. The first parameter is the dataset you choose (e.g., Family), the second parameter the ***MinSC***, and the third one is the ***MaxSC***. The fourth one is the threshold of head coverage ***MinHC***, the fifth one is the support threshold ***MinSupport***, the sixth parameter is the runtime of AnyBURL, and the last one is the boolean value that indicates if the KG is an attribute knowledge graph.
+To run the augmentation module, you may be required to install some Python packages first, In addition, you need to specify some hyper-parameters in the command: the first parameter is the dataset you choose (e.g., Family), the second parameter the ***MinSC***, and the third one is the ***MaxSC***. The fourth one is the threshold of head coverage ***MinHC***, the fifth one is the support threshold ***MinSupport***, the sixth parameter is the runtime of AnyBURL, and the last one is the boolean value that indicates if the KG is an attribute knowledge graph.
 ### Comment: 
 This module will enhance each rule from rule sets and create the output file augmented_rule and store new facts with corresponding original rule and new SC.
 ### Sample output:
