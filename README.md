@@ -1,6 +1,9 @@
 # Attribute Knowledge Graph Completion via Augmented Rule-based Learning Method
-The augmented rule-based learning system is built on [AnyBURL](https://web.informatik.uni-mannheim.de/AnyBURL/) and is also called ***Augmented AnyBURL***. The complete source code of Augmented Rule-based Learning System is stored in [Google Drive](https://drive.google.com/drive/folders/1Dypoy9xSNmGs7LjEm0sT1JPZ_9KGXTZo?usp=sharing). To run ***Augmented AnyBURL***, there are four steps to go.
-## Step 1: Learning
+The augmented rule-based learning system is built on [AnyBURL](https://web.informatik.uni-mannheim.de/AnyBURL/) and is also called ***Augmented AnyBURL***. The complete source code of Augmented Rule-based Learning System is stored in [Google Drive](https://drive.google.com/drive/folders/1Dypoy9xSNmGs7LjEm0sT1JPZ_9KGXTZo?usp=sharing). To run ***Augmented AnyBURL***, there are five steps to go.
+### Step 1: Locate the working directory
+Before you start to run the Augemented AnyBURL, you need to go to the working directory first since all the modules are here. The working directory is '/AnyBURL/de/unima/ki/anyburl'.
+
+## Step 2: Learning
 ### Command:
 java -Xmx3G -cp AnyBURL-JUNO.jar de.unima.ki.anyburl.LearnReinforced config-learn.properties
 ### Comment:
@@ -8,7 +11,7 @@ Open the ***config-learn.properties*** file and modify the line that points to t
 ### Sample output:
 350	2	0.005714285714285714	brother(212,Y) <= niece(A,Y)
 Where the first number is the number of triplet sets that satisfy the rule body pattern, the second number is the number of triplet sets that satisfy both the rule body pattern and rule head pattern, the third number is the standard confidence, and the last column refers to the rule. 
-## Step 2: Rule augmentation
+## Step 3: Rule augmentation
 ### Command: 
 Python Augmentation_module_V8.py Family 0 0.8 0.05 4 50 1
 ### Comment: 
@@ -18,17 +21,17 @@ This module will enhance each rule from rule sets and create the output file aug
 ### Sample output:
 108	21	0.1944	uncle(X,Y) <= uncle(X,A), brother(A,B), brother(Y,B)	710	uncle	698	0.9538\
 Where the first four columns show the information about the original rule, the fifth to seven columns indicate the new fact inferred from the attribute rule, and the last column is the new SC of the attribute rule.
-## Step 3: Predicting
+## Step 4: Predicting
 ### Command:
 java -Xmx3G -cp AnyBURL-JUNO.jar de.unima.ki.anyburl.Apply config-apply.properties
 ### Comment:
-Open the ***config-apply.properties*** file and change the hyper-parameters if you need. Note that you must specify the rules you have previously learned from step1, and you need to specify the file storing augmented rules you have obtained from step 2 with the line ***PATH_ARGMENTED_RULES=rules/augmented_rule***.
+Open the ***config-apply.properties*** file and change the hyper-parameters if you need. Note that you must specify the rules you have previously learned from step1, and you need to specify the file storing augmented rules you have obtained from step 3 with the line ***PATH_ARGMENTED_RULES=rules/augmented_rule***.
 ### Sample output:
 16 niece 227
 Heads: 16	0.3125	15	0.2429	598	0.2374…\
 Tails: 41	0.328125	10	0.3125	227	0.3125	604	0.2129…\
 Where the first row indicates the exact link prediction task, the following section started from Head is the candidates of head entity prediction results where 16 is the entity id and 0.3125 is the highest ***SC*** of the rule that suggest entity 16. The last section started from Tail is the candidates of tail entity prediction results where 41 is the entity id and 0.328125 is the highest ***SC*** of the rule that infers entity 41.
-## Step 4: Link prediction evaluation
+## Step 5: Link prediction evaluation
 ### Command:
 java -Xmx3G -cp AnyBURL-JUNO.jar de.unima.ki.anyburl.Eval config-eval.properties  
 ### Comment:
